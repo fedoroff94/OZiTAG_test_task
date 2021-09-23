@@ -1,0 +1,161 @@
+select {
+    border: 1px solid grey;
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    font-family: David;
+}
+
+.first_page_container {
+    border-bottom: 1px solid grey;
+    /*height: 600px;*/
+    margin-bottom: 10px;
+    background-color: #FAFAFA;
+}
+
+.customer_tenders_titles {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.customer_tenders_title {
+    padding-left: 10px;
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.chosen_customer_tenders {
+    padding-right: 10px;
+    color: blue;
+}
+
+.customer_tenders_select_container {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.customer_tenders_select {
+    width: 1325px;
+    height: 40px;
+    padding-left: 10px;
+    border-left: 3px solid blue;
+}
+
+.vendor_tenders_title {
+    padding-left: 5px;
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.vendor_tenders_select_container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.vendor_tenders_select {
+    width: 1325px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+.second_page_container {
+    width: 100%;
+    display: none;
+}
+
+.up_section_container {
+    background-color: #FAFAFA;
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+}
+
+.title_container {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.back_arrow {
+    width: 20px;
+    height: 20px;
+    background: url("./assets/arrow.svg") no-repeat center;
+    overflow: hidden;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.sold_goods_title {
+    padding-left: 10px;
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.input_container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+
+.sold_goods_input {
+    width: 1310px;
+    height: 40px;
+    outline: none;
+}
+
+.goods_list {
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
+}
+
+.list_position {
+    display: flex;
+    align-items: center;
+}
+
+.list_position_input {
+    width: 20px;
+    height: 20px;
+}
+
+#show_selected {
+    display: none;
+}
+
+.second_page_footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    background-color: #FAFAFA;
+}
+
+.apply_btn {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #035B77;
+    font-size: 15px;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.clear_btn {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: grey;
+    border: none;
+    outline: none;
+}

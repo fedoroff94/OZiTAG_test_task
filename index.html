@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title>Расширенный SELECT</title>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="first_page_container" id="first_page_container">
+        <div class="customer_select_container">
+            <div class="customer_tenders_titles">
+                <span class="customer_tenders_title">Тендеры в роли Заказчика</span>
+                <span class="chosen_customer_tenders" id="show_selected">Показать выбранное (10)</span>
+            </div>
+            <div class="customer_tenders_select_container">
+
+                <select name="customer_tenders" id="customer_tenders" class="customer_tenders_select">
+                    <option value="" selected>Выберите сферу закупок</option>
+                    <option value="1" id="customer_tenders_opt_one">[A] - Продукция сельского хозяйства, лесного
+                        хозяйства, рыбоводства и
+                        рыболовства
+                    </option>
+                    <option value="2" id="customer_tenders_opt_two">[О] - Услуги в области государственного управления и
+                        обороны, предоставляемые
+                        обществу в целом;
+                        услуги по обязательному социальному страхованию
+                    </option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="vendor_select_container">
+            <div class="vendor_tenders_title">
+                <span class="vendor_tenders_title">Тендеры в роли Поставщика</span>
+            </div>
+            <div class="vendor_tenders_select_container">
+                <select name="" id="" class="vendor_tenders_select">
+                    <option value="" selected>Код ОКРБ или наименование закупаемой продукции</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="second_page_container" id="second_page_container">
+        <div class="up_section_container">
+            <div class="title_container">
+                <div class="back_arrow" id="back_arrow"></div>
+                <div class="sold_goods_title">Реализуемые товары</div>
+            </div>
+            <div class="input_container">
+                <input class="sold_goods_input" type="text">
+            </div>
+        </div>
+
+        <div class="goods_list" id="goods_list">
+
+        </div>
+
+        <div class="second_page_footer">
+            <div>
+                <button class="apply_btn">ПРИМЕНИТЬ</button>
+            </div>
+            <div>
+                <button class="clear_btn">ОЧИСТИТЬ</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
