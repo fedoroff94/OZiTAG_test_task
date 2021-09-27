@@ -97,7 +97,17 @@ select {
     padding-left: 10px;
     font-family: SansSerif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 17px;
+}
+
+.checked_goods {
+    padding-left: 10px;
+    font-family: SansSerif;
+    font-weight: bold;
+    font-size: 15px;
+    color: grey;
+    display: none;
+    cursor: pointer;
 }
 
 .input_container {

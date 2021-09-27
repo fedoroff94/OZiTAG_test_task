@@ -3,18 +3,96 @@ let firstPage = document.getElementById('first_page_container');
 let secondPage = document.getElementById('second_page_container');
 let goodsList = document.getElementById('goods_list');
 let backArrow = document.getElementById('back_arrow');
+let soldGoodsInput = document.getElementById('sold_goods_input');
+let applyBtn = document.getElementById('apply_btn');
+let clearBtn = document.getElementById('clear_btn');
+let checkedGoods = document.getElementById('checked_goods');
 
-let backToMainPage = () => {
-    secondPage.style.display = 'none';
-    firstPage.style.display = "block";
+let someFunction = () => {
+
+    firstPage.style.display = "none";
+    secondPage.style.display = 'block';
+
+    let backToMainPage = () => {
+        secondPage.style.display = 'none';
+        firstPage.style.display = "block";
+        customerTendersSelect.value = 0;
+    };
+
+    let divContainer = document.querySelector("#goods_list");
+    let divsNodeList = divContainer.querySelectorAll('div.list_position > div');
+    let positionsArray = [];
+    let checkboxInputsNodes = divContainer.querySelectorAll('div.list_position > input');
+
+    divsNodeList.forEach(positionText => positionsArray.push(positionText.innerText.trim()));
+
+    let lowerCasePositionsArray = positionsArray.map(string => string.replace('Услуги', 'услуги'));
+
+    let searchInputText = () => {
+        let find = false;
+        for (let i = 0; i < lowerCasePositionsArray.length; i++) {
+            divsNodeList[i].style.background = 'none';
+            if (lowerCasePositionsArray[i].includes(soldGoodsInput.value.toLowerCase())) {
+                divsNodeList[i].style.background = '#F2F7F8';
+                find = true;
+            }
+        }
+        if (!find) {
+            alert(`There is no substring: "${soldGoodsInput.value}" in the list...`);
+        }
+    };
+
+    let addBackgroundIfChecked = () => {
+        let count = 0;
+        for (let i = 0; i < checkboxInputsNodes.length; i++) {
+            if (checkboxInputsNodes[i].checked) {
+                divsNodeList[i].style.background = '#F2F7F8';
+                count++;
+            } else {
+                divsNodeList[i].style.background = 'none';
+            }
+        }
+
+        count !== 0 ? checkedGoods.style.display = 'block' : checkedGoods.style.display = 'none';
+        checkedGoods.innerHTML = `Выбранное (${count})`;
+    };
+
+    checkboxInputsNodes.forEach(checkbox => checkbox.addEventListener('change', addBackgroundIfChecked));
+    applyBtn.addEventListener('click', searchInputText);
+
+    let refreshAll = () => {
+        soldGoodsInput.value = '';
+        checkedGoods.style.display = 'none';
+        for (let checkbox of checkboxInputsNodes) {
+            checkbox.checked = false;
+        }
+        for (let position of divsNodeList) {
+            position.style.background = 'none';
+        }
+        for (let container of containers) {
+            container.style.display = 'block';
+        }
+    };
+
+    clearBtn.addEventListener('click', refreshAll);
+
+    let showOnlyChecked = () => {
+        let containers = document.querySelectorAll('div.list_position');
+        for (let i = 0; i < checkboxInputsNodes.length; i++) {
+            if (!checkboxInputsNodes[i].checked) {
+                containers[i].style.display = 'none';
+            }
+        }
+    };
+
+    checkedGoods.addEventListener('click', showOnlyChecked);
+    backArrow.addEventListener('click', backToMainPage);
+    backArrow.addEventListener('click', refreshAll);
 };
 
-backArrow.addEventListener('click', backToMainPage);
 
-customerTendersSelect.addEventListener('change', function () {
+let drawCurrentGoodsList = () => {
     if (customerTendersSelect.value == 1) {
-        firstPage.style.display = "none";
-        secondPage.style.display = 'block';
         goodsList.innerHTML = `
         <div class="list_position">
                 <input type="checkbox" class="list_position_input">
@@ -66,9 +144,9 @@ customerTendersSelect.addEventListener('change', function () {
                 </div>
             </div>`;
 
+        someFunction();
+
     } else if (customerTendersSelect.value == 2) {
-        firstPage.style.display = "none";
-        secondPage.style.display = 'block';
         goodsList.innerHTML = `
         <div class="list_position">
                 <input type="checkbox" class="list_position_input">
@@ -192,10 +270,11 @@ customerTendersSelect.addEventListener('change', function () {
                     органов управления и самоуправления
                     базового территориального уровня
                 </div>
-            </div>`
-    }
-});
+            </div>`;
 
-let divContainer = document.querySelector("#goods_list");
-let divsArray = divContainer.querySelectorAll('div.list_position');
-console.log(divsArray);
+        someFunction();
+    }
+};
+
+customerTendersSelect.addEventListener('change', drawCurrentGoodsList);
+

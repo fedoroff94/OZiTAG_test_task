@@ -18,7 +18,7 @@
             <div class="customer_tenders_select_container">
 
                 <select name="customer_tenders" id="customer_tenders" class="customer_tenders_select">
-                    <option value="" selected>Выберите сферу закупок</option>
+                    <option value="0" selected>Выберите сферу закупок</option>
                     <option value="1" id="customer_tenders_opt_one">[A] - Продукция сельского хозяйства, лесного
                         хозяйства, рыбоводства и
                         рыболовства
@@ -51,9 +51,10 @@
             <div class="title_container">
                 <div class="back_arrow" id="back_arrow"></div>
                 <div class="sold_goods_title">Реализуемые товары</div>
+                <div class="checked_goods" id="checked_goods"></div>
             </div>
             <div class="input_container">
-                <input class="sold_goods_input" type="text">
+                <input class="sold_goods_input" type="text" id="sold_goods_input">
             </div>
         </div>
 
@@ -63,10 +64,10 @@
 
         <div class="second_page_footer">
             <div>
-                <button class="apply_btn">ПРИМЕНИТЬ</button>
+                <button class="apply_btn" id="apply_btn">ПРИМЕНИТЬ</button>
             </div>
             <div>
-                <button class="clear_btn">ОЧИСТИТЬ</button>
+                <button class="clear_btn" id="clear_btn">ОЧИСТИТЬ</button>
             </div>
         </div>
 
