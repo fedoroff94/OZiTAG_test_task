@@ -23,6 +23,7 @@ let someFunction = () => {
     let divsNodeList = divContainer.querySelectorAll('div.list_position > div');
     let positionsArray = [];
     let checkboxInputsNodes = divContainer.querySelectorAll('div.list_position > input');
+    let containers = document.querySelectorAll('div.list_position');
 
     divsNodeList.forEach(positionText => positionsArray.push(positionText.innerText.trim()));
 
@@ -32,12 +33,16 @@ let someFunction = () => {
         let find = false;
         for (let i = 0; i < lowerCasePositionsArray.length; i++) {
             divsNodeList[i].style.background = 'none';
-            if (lowerCasePositionsArray[i].includes(soldGoodsInput.value.toLowerCase())) {
+            divsNodeList[i].style.fontWeight = 'normal';
+            if (lowerCasePositionsArray[i].includes(soldGoodsInput.value.toLowerCase()) &&
+                soldGoodsInput.value.length) {
                 divsNodeList[i].style.background = '#F2F7F8';
                 find = true;
+                divsNodeList[i].innerHTML = divsNodeList[i].innerHTML.replace(new RegExp(soldGoodsInput.value, 'g'),
+                    "<b>" + soldGoodsInput.value + "</b>");
             }
         }
-        if (!find) {
+        if (!find && soldGoodsInput.value.length != 0) {
             alert(`There is no substring: "${soldGoodsInput.value}" in the list...`);
         }
     };
@@ -60,6 +65,12 @@ let someFunction = () => {
     checkboxInputsNodes.forEach(checkbox => checkbox.addEventListener('change', addBackgroundIfChecked));
     applyBtn.addEventListener('click', searchInputText);
 
+    soldGoodsInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            searchInputText();
+        }
+    });
+
     let refreshAll = () => {
         soldGoodsInput.value = '';
         checkedGoods.style.display = 'none';
@@ -70,14 +81,13 @@ let someFunction = () => {
             position.style.background = 'none';
         }
         for (let container of containers) {
-            container.style.display = 'block';
+            container.style.display = 'flex';
         }
     };
 
     clearBtn.addEventListener('click', refreshAll);
 
     let showOnlyChecked = () => {
-        let containers = document.querySelectorAll('div.list_position');
         for (let i = 0; i < checkboxInputsNodes.length; i++) {
             if (!checkboxInputsNodes[i].checked) {
                 containers[i].style.display = 'none';
@@ -89,7 +99,6 @@ let someFunction = () => {
     backArrow.addEventListener('click', backToMainPage);
     backArrow.addEventListener('click', refreshAll);
 };
-
 
 let drawCurrentGoodsList = () => {
     if (customerTendersSelect.value == 1) {

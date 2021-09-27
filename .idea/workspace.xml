@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54011946-1531-44a2-ac1c-69098c474161" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +73,7 @@
       <workItem from="1632385320088" duration="2836000" />
       <workItem from="1632389780416" duration="26443000" />
       <workItem from="1632676832097" duration="13722000" />
-      <workItem from="1632730582069" duration="6915000" />
+      <workItem from="1632730582069" duration="20299000" />
     </task>
     <servers />
   </component>
@@ -94,10 +92,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1632471421623">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1632764380164">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632471421623" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1632764380164" />
     <state x="416" y="60" key="RollbackChangesDialog" timestamp="1632680110762">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
